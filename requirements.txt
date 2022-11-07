@@ -3,7 +3,6 @@ Django
 python-dotenv
 ez_setup
 setuptools
-mysql-client
 mysql-connector-python
 pymysql
 mysqlclient
