@@ -1,3 +1,7 @@
 gunicorn
 Django
 python-dotenv
+mysql-client
+mysql-connector-python
+pymysql
+mysqlclient

@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-szkh)zn&&sqlz7cb5vupd!*1d0ey+6a@zf!o87e)0qenbr+t3r'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -76,10 +76,13 @@ WSGI_APPLICATION = 'bsfmundial.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+DATABASES = { 
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mnh1au9bozbs371g',
+        'USER': 'bye304hju35jdh55',
+        'PASSWORD': 'e62nlztlw9ixcrz3',
+        'HOST': 'j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
     }
 }
 
