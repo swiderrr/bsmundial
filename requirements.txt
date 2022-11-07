@@ -1,6 +1,9 @@
 gunicorn
 Django
 python-dotenv
+ez_setup
+unroll
+setuptools
 mysql-client
 mysql-connector-python
 pymysql
