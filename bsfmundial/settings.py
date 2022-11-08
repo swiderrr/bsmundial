@@ -85,10 +85,9 @@ DATABASES = {
         'PASSWORD': env("DB_PASSWORD"),
         'HOST': env("DB_HOST"),
         'PORT': env("DB_HOST"),
-        'OPTIONS': {
-             'driver': 'ODBC Driver 17 for SQL Server',
-             'MARS_Connection': 'True',
-         }
+        # 'OPTIONS': {
+        #      'driver': 'ODBC Driver 17 for SQL Server',
+        #  }
     }
 }
 
