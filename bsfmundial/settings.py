@@ -86,7 +86,7 @@ DATABASES = {
         'HOST': env("DB_HOST"),
         'PORT': env("DB_HOST"),
         'OPTIONS': {
-             'driver': 'ODBC Driver 17 for SQL Server',
+             'driver': 'ODBC Driver 18 for SQL Server',
              'MARS_Connection': 'True',
          }
     }
