@@ -2,13 +2,6 @@ gunicorn
 Django
 python-dotenv
 ez_setup
-environ
+django-environ
 setuptools
 mssql-django
-# mysql-connector-python
-# pymysql
-# mssql-django
-# django-environ
-# pyodbc
-# django-pyodbc-azure
-# django-mssql-backend
