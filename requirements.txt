@@ -11,4 +11,3 @@ django-environ
 pyodbc
 django-pyodbc-azure
 django-mssql-backend
-mysqlclient 
