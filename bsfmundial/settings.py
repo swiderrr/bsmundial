@@ -77,6 +77,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bsfmundial.wsgi.application'
 
 
+# DATABASES = { 
+#     'default': {
+#         'ENGINE': 'mssql',
+#         'NAME': env("DB_NAME"),
+#         'USER': env("DB_USER"),
+#         'PASSWORD': env("DB_PASSWORD"),
+#         'HOST': env("DB_HOST"),
+#         'PORT': env("DB_HOST"),
+#         'OPTIONS': {
+#              'driver': 'ODBC Driver 17 for SQL Server',
+#          }
+#     }
+# }
+
 DATABASES = { 
     'default': {
         'ENGINE': 'mssql',
@@ -85,9 +99,10 @@ DATABASES = {
         'PASSWORD': env("DB_PASSWORD"),
         'HOST': env("DB_HOST"),
         'PORT': env("DB_HOST"),
-        # 'OPTIONS': {
-        #      'driver': 'ODBC Driver 17 for SQL Server',
-        #  }
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+            'MARS_Connection': 'True',
+        }
     }
 }
 

@@ -7,3 +7,6 @@ mysql-connector-python
 pymysql
 mssql-django
 django-environ
+pyodbc
+django-pyodbc-azure
+django-mssql-backend

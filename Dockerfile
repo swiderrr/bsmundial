@@ -7,17 +7,14 @@ RUN apt-get update && apt-get install -y \
     odbcinst \
     odbcinst1debian2 \
     libodbc1 \
-    unixodbc 
+    unixodbc \
+    wget
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+RUN curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list
+RUN wget https://packages.microsoft.com/debian/11/prod/pool/main/m/msodbcsql17/msodbcsql17_17.10.1.1-1_amd64.deb
+RUN ACCEPT_EULA=Y apt-get install -y ./msodbcsql17_17.10.1.1-1_amd64.deb
 ADD requirements.txt requirements.txt
 RUN pip3 install --no-cache-dir -q -r requirements.txt
-RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list
-RUN apt-get update
-RUN ACCEPT_EULA=Y apt-get install -y msodbcsql17
-RUN echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
-RUN . ~/.bashrc
-RUN apt-get install -y unixodbc-dev
-RUN apt-get install -y libgssapi-krb5-2
 COPY . /app
 WORKDIR /app
 CMD python manage.py runserver 0.0.0.0:$PORT
