@@ -5,3 +5,5 @@ ez_setup
 setuptools
 mysql-connector-python
 pymysql
+mssql-django
+django-environ

@@ -11,8 +11,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
-import dotenv
+import environ
 from pathlib import Path
+
+env = environ.Env()
+environ.Env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,16 +77,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'bsfmundial.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
 DATABASES = { 
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mnh1au9bozbs371g',
-        'USER': 'bye304hju35jdh55',
-        'PASSWORD': 'e62nlztlw9ixcrz3',
-        'HOST': 'j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
+        'ENGINE': 'mssql',
+        'NAME': env("DB_NAME"),
+        'USER': env("DB_USER"),
+        'PASSWORD': env("DB_PASSWORD"),
+        'HOST': env("DB_HOST"),
+        'PORT': '1433',
+        'OPTIONS': {
+             'driver': 'ODBC Driver 17 for SQL Server',
+             'MARS_Connection': 'True',
+         }
     }
 }
 
@@ -131,8 +137,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #SECRETS
 
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
+SECRET_KEY = env("SECRET_KEY"),
 
-SECRET_KEY = os.environ['SECRET_KEY']
+
