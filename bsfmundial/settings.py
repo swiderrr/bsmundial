@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'bsfmundial.wsgi.application'
 
 DATABASES = { 
     'default': {
-        'ENGINE': 'mysql.connector.django',
+        'ENGINE': 'mssql',
         'NAME': env("DB_NAME"),
         'USER': env("DB_USER"),
         'PASSWORD': env("DB_PASSWORD"),
@@ -101,7 +101,6 @@ DATABASES = {
         'PORT': env("DB_PORT"),
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
-            'MARS_Connection': 'True',
         }
     }
 }

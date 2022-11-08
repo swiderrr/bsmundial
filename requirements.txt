@@ -4,10 +4,11 @@ python-dotenv
 ez_setup
 environ
 setuptools
-mysql-connector-python
-pymysql
 mssql-django
-django-environ
-pyodbc
-django-pyodbc-azure
-django-mssql-backend
+# mysql-connector-python
+# pymysql
+# mssql-django
+# django-environ
+# pyodbc
+# django-pyodbc-azure
+# django-mssql-backend
