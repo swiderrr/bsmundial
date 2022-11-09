@@ -11,6 +11,7 @@ class Bet(models.Model):
     author = models.CharField(max_length=30)
     value = models.IntegerField()
     result = models.CharField(max_length=1, choices=RESULTS_CHOICES, default='', null=False)
+    score = models.CharField(max_length=3)
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish_bet(self):
