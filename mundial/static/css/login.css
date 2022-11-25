@@ -156,6 +156,30 @@ label {
   outline: none;
 }
 
+.signup {
+  background-color: #021d4d;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+
+.signup:hover {
+  background: #1f4fa1;
+  box-shadow: 0px 4px 35px -5px #1f4fa1;
+  cursor: pointer;
+}
+
+.signup:focus {
+  outline: none;
+}
+
 hr {
   border: 1px solid rgba(255, 255, 255, 0.1);
   top: 85px;
@@ -165,7 +189,7 @@ hr {
 a {
   text-align: center;
   display: block;
-  top: 60px;
+  /* top: 60px; */
   position: relative;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.2);

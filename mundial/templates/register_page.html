@@ -7,23 +7,25 @@
     </head>
     <body>
         <div class="login">
-            <h2 class="active"><a href="{% url 'login_page' %}"> Zaloguj </a></h2>
-            <h2 class="nonactive"><a href="{% url 'register_page' %}"> Zarejestruj </a></h2>
+            <h2 class="nonactive"><a href="{% url 'login_page' %}"> Zaloguj </a></h2>
+            <h2 class="active"><a href="{% url 'register_page' %}"> Zarejestruj </a></h2>
                 <form action="" method="post">
                     {% csrf_token %}
-                    <span style="color: #FF0000; opacity: 1.0;">{{ error_message }}</span>
+                    <span style="color: #FF0000; opacity: 1.0;">{{ wrong_pass }}</span>
                     <br>
                     <input type="text" class="text" name="username">
                     <span>login</span>
                     <br>
                     <br>
-                    <input type="password" class="text" name="password">
+                    <input type="password" class="text" name="password1">
                     <span>hasło</span>
                     <br>
-                     <input type="checkbox" id="checkbox-1-1" class="custom-checkbox" />
-                    <label for="checkbox-1-1">Pozostaw zalogowanym</label> 
-                    <button class="signin">
-                        Zaloguj
+                    <br>
+                    <input type="password" class="text" name="password2">
+                    <span>hasło</span>
+                    <br>
+                    <button class="signup">
+                        Zarejestruj
                     </button>
                 </form>
         </div>

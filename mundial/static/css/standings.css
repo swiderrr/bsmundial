@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+
+body,
+html {
+  font-family: "Titillium Web", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #f8f9fa;
+}
+
+/* VARIABLES */
+
+:root {
+  --mercedes-color: #00d2be;
+  --redbull-color: #0600ef;
+  --ferrari-color: #dc0000;
+  --hover-color: #38383f;
+  --mclaren-color: #ff8700;
+  --racing-point-color: #f596c8;
+  --renault-color: #fff500;
+}
+
+.table-container {
+  width: 60%;
+  min-width: 600px;
+  /* border: 1px solid black; */
+  margin: 100px auto;
+}
+
+.table-container th {
+  display: none;
+}
+
+.table-container tr {
+  display: flex;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.table-container tr.table-content {
+  background: white; 
+  justify-content: space-between;
+  padding: 0;
+}
+
+.table-container tr.table-content td {
+  margin: 0 20px 0 10px;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 10px;
+}
+
+.table-container tr.table-content td .position {
+  border-right: 5px solid var(--mercedes-color);
+  padding-right: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.table-container tr.table-content td .driver-name {
+  margin-left: 10px;
+}
+
+.table-container tr.table-content td .driver-surname {
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.table-container tr.table-content td .team {
+  font-size: 1rem;
+  color: #666;
+  margin-left: 10px;
+}
+
+.table-container tr.table-content td .points {
+  background-color: #ccc;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  padding: 0 10px;
+}
+
+.table-container tr.table-content td i {
+  margin-left: 20px;
+  color: #e10600;
+  font-size: 18px;
+}
+
+/* HOVER */
+
+.table-container tr:hover {
+  background-color: var(--hover-color);
+  color: #ffffff;
+}
+
+.table-container tr:hover .points {
+  color: black;
+}
+
+/* DRIVER 2 */
+
+.table-container .table-content.driver2 .position {
+  border-right: 5px solid var(--redbull-color);
+}
+
+/* DRIVER 4 */
+
+.table-container .table-content.driver4 .position {
+  border-right: 5px solid var(--redbull-color);
+}
+
+/* DRIVER 5 */
+
+.table-container .table-content.driver5 .position {
+  border-right: 5px solid var(--ferrari-color);
+}
+
+/* DRIVER 6 */
+
+.table-container .table-content.driver6 .position {
+  border-right: 5px solid var(--mclaren-color);
+}
+
+/* DRIVER 7 */
+
+.table-container .table-content.driver7 .position {
+  border-right: 5px solid var(--racing-point-color);
+}
+
+/* DRIVER 8 */
+
+.table-container .table-content.driver8 .position {
+  border-right: 5px solid var(--renault-color);
+}
+
+/* DRIVER 9 */
+
+.table-container .table-content.driver9 .position {
+  border-right: 5px solid var(--racing-point-color);
+}
+
+/* DRIVER 10 WITH EXTRA MARGIN/PADDING TO COMPENSATE EXTRA DIGIT */
+
+.table-container .table-content.driver10 .position {
+  border-right: 5px solid var(--renault-color);
+  padding-right: 7px;
+}
+
+.table-container .table-content.driver10 td {
+  margin-left: 0;
+}

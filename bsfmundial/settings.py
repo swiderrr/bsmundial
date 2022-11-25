@@ -9,10 +9,14 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+# import django
+# django.setup()
+
 
 import os
 import environ
 from pathlib import Path
+# from mundial.models import User
 
 env = environ.Env()
 environ.Env.read_env()
@@ -29,22 +33,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-
+CSRF_TRUSTED_ORIGINS=['http://127.0.0.1:8000', 'https://bsfmundial.herokuapp.com/']
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.contenttypes',
+    'mundial',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mundial',
 ]
+
+AUTH_USER_MODEL = "mundial.Account"
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.AllowAllUsersModelBackend',
+    'mundial.backends.CaseInsensitiveModelBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,20 +86,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bsfmundial.wsgi.application'
 
-
-# DATABASES = { 
-#     'default': {
-#         'ENGINE': 'mssql',
-#         'NAME': env("DB_NAME"),
-#         'USER': env("DB_USER"),
-#         'PASSWORD': env("DB_PASSWORD"),
-#         'HOST': env("DB_HOST"),
-#         'PORT': env("DB_HOST"),
-#         'OPTIONS': {
-#              'driver': 'ODBC Driver 17 for SQL Server',
-#          }
-#     }
-# }
 
 DATABASES = { 
     'default': {
@@ -153,4 +149,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SECRET_KEY = env("SECRET_KEY"),
 
+LOGIN_URL = 'login_page' # this is the name of the url
 
+LOGOUT_REDIRECT_URL = 'login_page' # this is the name of the url
+
+LOGIN_REDIRECT_URL = 'homepage' # this is the name of the url
