@@ -3,16 +3,17 @@
 {% block content %}
     <table class="table-container">
         {% for user in user_list %}
-            <tr class="table-content driver1">
+            <tr class="table-content driver2">
                 <td>
-                <span class="position">{{ forloop.counter }}</span>
+                <span class="position" style="border-right-color">{{ forloop.counter }}</span>
                 <span class="driver-name">{{ adj_list | random }}</span>
                 <span class="driver-surname">{{ user.username }}</span>
                 <!-- <span class="team">Mercedes</span> -->
                 </td>
                 <td>
-                <span class="points">{{ user.points }} PTS</span
-                ><i class="fas fa-chevron-right"></i>
+                <span class="points">{{ user.points }} PTS
+                </span>
+                    <i class="fas fa-chevron-right"></i>
                 </td>
             </tr>
         {% endfor %}
