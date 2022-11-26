@@ -5,9 +5,11 @@ from django.contrib import messages
 from datetime import datetime, timezone
 from mundial.models import Account
 from mundial.forms import AccountAuthenticationForm
+from django.views.decorators.csrf import csrf_exempt
 
 adj_list = open("mundial/utilities/adj_list.txt").read().splitlines()
 
+@csrf_exempt
 def login_page(request):
     
     error_message = "Błędne dane logowania"
@@ -34,6 +36,7 @@ def start_page(request):
     else:
         return redirect('login_page')
 
+@csrf_exempt
 def register_page(request):
     if request.method == 'POST':
         new_username = request.POST['username']
