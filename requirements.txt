@@ -5,3 +5,4 @@ ez_setup
 django-environ
 setuptools
 mssql-django
+whitenoise

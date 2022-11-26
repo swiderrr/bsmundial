@@ -63,7 +63,7 @@ def homepage(request):
 def standings_page(request):
     if request.user.is_authenticated:
         user_list = Account.objects.all().order_by("points")
-        return render(request, 'standings.html', {'user_list': user_list,
+        return render(request, 'standings_page.html', {'user_list': user_list,
                                                   'adj_list': adj_list
                                                   })
     else:

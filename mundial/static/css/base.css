@@ -1,5 +1,5 @@
-@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+@import url("//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("//fonts.googleapis.com/css?family=Titillium+Web:300");
 .fa-2x {
 font-size: 2em;
 }
